@@ -114,7 +114,7 @@ if(!empty($_POST))
                   
                    
 
-  $conteudo = "Cliente: ";
+  $conteudo = "Fornecedor: ";
   
   for($i = 0; $i < count($cliente); $i++)
   {

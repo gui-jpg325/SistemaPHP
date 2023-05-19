@@ -130,7 +130,7 @@ if(!empty($_POST))
                    $_POST['nm_mae'], $_POST['telefone'], $_POST['funcionario'],
                    $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['funcionario'] );
 
-  $conteudo = "Cliente: ";
+  $conteudo = "Funcionario: ";
   
   for($i = 0; $i < count($cliente); $i++)
   {

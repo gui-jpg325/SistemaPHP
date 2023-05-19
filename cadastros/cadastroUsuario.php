@@ -93,7 +93,7 @@ if(!empty($_POST))
   $cliente = array($_POST['nome'], $_POST['cpf'], $_POST['rg'], $_POST['cep'], $_POST['rua'], $_POST['numero'], 
                    $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['celular'], $_POST['email'] );
 
-  $conteudo = "Cliente: ";
+  $conteudo = "Usuario: ";
   
   for($i = 0; $i < count($cliente); $i++)
   {
