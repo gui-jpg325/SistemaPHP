@@ -29,48 +29,64 @@
     <!-- Login Form -->
     <form class="row g-3" action="#" method="POST">
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">NOME</label><br>
-        <input type="text" class="form-control" name="nome" placeholder="Ex: Maria Das Dores" >
+        <label for="inputEmail4" class="form-label">LINHA DO PRODUTO</label><br>
+        <input type="text" class="form-control" name="linha" >
       </div>
       <div class="col-md-6">
-        <label for="cpf" class="form-label">CPF</label><br>
-        <input type="text" maxlength="11" name="cpf" class="form-control" onblur="TestaCPF(this.value);">
+        <label for="inputEmail4" class="form-label">DESCRIÇÃO DO PRODUTO</label><br>
+        <input type="text" class="form-control" name="ds_produto" >
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">RG</label><br>
-        <input type="number" class="form-control" name="rg" placeholder="XX-XXX-XXX-X">
+        <label for="inputEmail4" class="form-label">GRUPO DE PRODUTO</label><br>
+        <input type="text" class="form-control" name="gp_produto">
       </div>
       <div class="col-md-6">
-        <label  for="inputPassword4"  class="form-label">CEP</label><br>
-        <input name="cep" type="text" id="cep" class="form-control" onblur="pesquisacep(this.value);" placeholder="XXXXX-XXX">
+        <label for="inputEmail4" class="form-label">NCM/SH</label><br>
+        <input type="text" class="form-control" name="ncm_sh">
       </div>
       <div class="col-md-6">
-        <label  for="inputEmail4" class="form-label">RUA</label><br>
-        <input name="rua" type="text"  id="rua" class="form-control" placeholder="Ex: Rua João André Quíntale">
+        <label for="inputEmail4" class="form-label">MODELO</label><br>
+        <input type="text" class="form-control" name="modelo">
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Nº</label><br>
-        <input type="number" class="form-control" name="numero" placeholder="Ex: 476">
+        <label for="inputEmail4" class="form-label">CÓDIGO DO PRODUTO</label><br>
+        <input type="number" class="form-control" name="cd_produto">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">BAIRRO</label><br>
-        <input name="bairro" type="text" class="form-control" id="bairro"  placeholder="Ex: Maracanã">
+        <label for="inputPassword4" class="form-label">UNIDADE</label><br>
+        <input type="number" class="form-control" name="unidade">
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">CIDADE</label><br>
-        <input name="cidade" type="text"  id="cidade" class="form-control" placeholder="Praia Grande">
+        <label for="inputEmail4" class="form-label">PESO/GRAMAS</label><br>
+        <input type="number" class="form-control" name="peso">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">ESTADO</label><br>
-        <input name="uf" type="text" id="uf" class="form-control" placeholder="São Paulo">
+        <label for="inputEmail4" class="form-label">FORNECEDOR</label><br>
+        <input type="text" class="form-control" name="fornecedor">
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">CELULAR</label><br>
-        <input type="text" name="celular" id="telefone" class="form-control" onblur="mascaracelular(this.value); "placeholder="Ex.: (11) 91234-1234">
+        <label for="inputEmail4" class="form-label">DATA DA COMPRA</label><br>
+        <input type="number" class="form-control" name="dt_compra">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">EMAIL</label><br>
-        <input type="email" class="form-control" name="email" placeholder="ExemploEmail@gmail.com">
+        <label for="inputEmail4" class="form-label">ESTOQUE INICIAL</label><br>
+        <input type="number" class="form-control" name="estq_inicial">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CUSTO UNITÁRIO</label><br>
+        <input type="number" class="form-control" name="cst_unitario">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">CUSTO TOTAL</label><br>
+        <input type="number" class="form-control" name="cst_total">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">TAMANHO</label><br>
+        <input type="text" class="form-control" name="tamanho">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">COR</label><br>
+        <input type="text" class="form-control" name="cor">
       </div>
       <div class="col-md-12">
       <input class="btn btn-sucess" type="submit" value="Enviar">
@@ -84,14 +100,20 @@
 
   </div>
 </div>
-
+<script type="text/javascript" src="../js/viacep.js"></script>
+<script type="text/javascript" src="../js/validaCPF.js"></script>
+<script type="text/javascript" src="../js/mascaracelular.js"></script>
+<script type="text/javascript" src="../js/mascaracpf.js"></script>
   </body>
 </html>
 <?php
 if(!empty($_POST))
 {
-  $cliente = array($_POST['nome'], $_POST['cpf'], $_POST['rg'], $_POST['cep'], $_POST['rua'], $_POST['numero'], 
-                   $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['celular'], $_POST['email'] );
+  $cliente = array($_POST['linha'], $_POST['ds_produto'], $_POST['gp_produto'], $_POST['ncm_sh'], $_POST['modelo'], $_POST['cd_produto'], 
+                   $_POST['unidade'], $_POST['peso'], $_POST['fornecedor'], $_POST['dt_compra'], $_POST['estq_inicial'], $_POST['cst_unitario'],
+                   $_POST['cst_total'], $_POST['tamanho'], $_POST['cor'] );
+                  
+                   
 
   $conteudo = "Cliente: ";
   
@@ -101,7 +123,7 @@ if(!empty($_POST))
     $conteudo .= $cliente[$i].", ";
     
   }
-  $caminho = "cliente.txt";
+  $caminho = "produto.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){
       echo"<script> alert('Dados cadastrado com sucesso');</script>";

@@ -29,48 +29,64 @@
     <!-- Login Form -->
     <form class="row g-3" action="#" method="POST">
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">NOME</label><br>
-        <input type="text" class="form-control" name="nome" placeholder="Ex: Maria Das Dores" >
+        <label for="inputEmail4" class="form-label">NOME FANTASIA</label><br>
+        <input type="text" class="form-control" name="nomeFantasia" >
       </div>
       <div class="col-md-6">
-        <label for="cpf" class="form-label">CPF</label><br>
-        <input type="text" maxlength="11" name="cpf" class="form-control" onblur="TestaCPF(this.value);">
-      </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">RG</label><br>
-        <input type="number" class="form-control" name="rg" placeholder="XX-XXX-XXX-X">
-      </div>
-      <div class="col-md-6">
-        <label  for="inputPassword4"  class="form-label">CEP</label><br>
-        <input name="cep" type="text" id="cep" class="form-control" onblur="pesquisacep(this.value);" placeholder="XXXXX-XXX">
-      </div>
-      <div class="col-md-6">
-        <label  for="inputEmail4" class="form-label">RUA</label><br>
-        <input name="rua" type="text"  id="rua" class="form-control" placeholder="Ex: Rua João André Quíntale">
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Nº</label><br>
-        <input type="number" class="form-control" name="numero" placeholder="Ex: 476">
-      </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">BAIRRO</label><br>
-        <input name="bairro" type="text" class="form-control" id="bairro"  placeholder="Ex: Maracanã">
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">CIDADE</label><br>
-        <input name="cidade" type="text"  id="cidade" class="form-control" placeholder="Praia Grande">
-      </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">ESTADO</label><br>
-        <input name="uf" type="text" id="uf" class="form-control" placeholder="São Paulo">
+        <label for="inputEmail4" class="form-label">RAZÃO SOCIAL</label><br>
+        <input type="text" class="form-control" name="razaoSocial" >
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">CELULAR</label><br>
-        <input type="text" name="celular" id="telefone" class="form-control" onblur="mascaracelular(this.value); "placeholder="Ex.: (11) 91234-1234">
+        <input type="text" maxlength="15" name="telefone" id="telefone" class="form-control" onblur="mascaracelular(this.value); ">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">EMAIL</label><br>
-        <input type="email" class="form-control" name="email" placeholder="ExemploEmail@gmail.com">
+        <label for="inputEmail4" class="form-label">CNPJ</label><br>
+        <input type="number" class="form-control" name="cnpj">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">INSCRIÇAO ESTADUAL</label><br>
+        <input type="number" class="form-control" name="inscricaoEstadual">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">INSCRIÇÃO MUNICIPAL</label><br>
+        <input type="number" class="form-control" name="inscricaoMunicipal">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">E-MAIL</label><br>
+        <input type="email" class="form-control" name="email">
+      </div>
+      <div class="col-md-6">
+        <label  for="inputPassword4"  class="form-label">CEP</label><br>
+        <input name="cep" type="text" id="cep" class="form-control" onblur="pesquisacep(this.value);">
+      </div>
+      <div class="col-md-6">
+        <label  for="inputEmail4" class="form-label">RUA</label><br>
+        <input name="rua" type="text"  id="rua" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Nº</label><br>
+        <input type="number" class="form-control" name="numero">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">COMPLEMENTO</label><br>
+        <input type="text" class="form-control" name="complemento">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CODIGO MUNICÍPIO</label><br>
+        <input type="number" class="form-control" name="cd_municipio">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">BAIRRO</label><br>
+        <input name="bairro" type="text" class="form-control" id="bairro">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CIDADE</label><br>
+        <input name="cidade" type="text"  id="cidade" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">ESTADO</label><br>
+        <input name="uf" type="text" id="uf" class="form-control">
       </div>
       <div class="col-md-12">
       <input class="btn btn-sucess" type="submit" value="Enviar">
@@ -81,20 +97,22 @@
       </div>
       
     </form>    
-    <script type="text/javascript" src="../js/viacep.js"></script>
-    <script type="text/javascript" src="../js/validaCPF.js"></script>
-    <script type="text/javascript" src="../js/mascaracelular.js"></script>
-    <script type="text/javascript" src="../js/mascaracpf.js"></script>
+
   </div>
 </div>
-
+<script type="text/javascript" src="../js/viacep.js"></script>
+<script type="text/javascript" src="../js/validaCPF.js"></script>
+<script type="text/javascript" src="../js/mascaracelular.js"></script>
+<script type="text/javascript" src="../js/mascaracpf.js"></script>
   </body>
 </html>
 <?php
 if(!empty($_POST))
 {
-  $cliente = array($_POST['nome'], $_POST['cpf'], $_POST['rg'], $_POST['cep'], $_POST['rua'], $_POST['numero'], 
-                   $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['celular'], $_POST['email'] );
+  $cliente = array($_POST['nomeFantasia'], $_POST['razaoSocial'], $_POST['cnpj'], $_POST['inscricaoEstadual'], $_POST['inscricaoMunicipal'], $_POST['email'], 
+                   $_POST['complemento'], $_POST['cd_municipio'], $_POST['telefone'], $_POST['bairro'], $_POST['cidade'], $_POST['uf'], );
+                  
+                   
 
   $conteudo = "Cliente: ";
   
@@ -104,7 +122,7 @@ if(!empty($_POST))
     $conteudo .= $cliente[$i].", ";
     
   }
-  $caminho = "cliente.txt";
+  $caminho = "fornecedor.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){
       echo"<script> alert('Dados cadastrado com sucesso');</script>";

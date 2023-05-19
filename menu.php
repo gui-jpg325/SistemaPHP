@@ -35,9 +35,9 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="cadastros/cadastroCliente.php">Cliente</a></li>
                 <li><a class="dropdown-item" href="cadastros/cadastroFuncionario.php">Funcionário</a></li>
-                <li><a class="dropdown-item" href="cadastros/cadastroFornecedor">Fornecedor</a></li>
-                <li><a class="dropdown-item" href="cadastros/cadastroProduto">Produto</a></li>
-                <li><a class="dropdown-item" href="cadastros/cadastroUsuario">Usuário</a></li>
+                <li><a class="dropdown-item" href="cadastros/cadastroFornecedor.php">Fornecedor</a></li>
+                <li><a class="dropdown-item" href="cadastros/cadastroProduto.php">Produto</a></li>
+                <li><a class="dropdown-item" href="cadastros/cadastroUsuario.php">Usuário</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

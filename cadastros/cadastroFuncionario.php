@@ -30,7 +30,11 @@
     <form class="row g-3" action="#" method="POST">
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">NOME</label><br>
-        <input type="text" class="form-control" name="nome" placeholder="Ex: Maria Das Dores" >
+        <input type="text" class="form-control" name="nome">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">GENERO</label><br>
+        <input type="text" class="form-control" name="genero">
       </div>
       <div class="col-md-6">
         <label for="cpf" class="form-label">CPF</label><br>
@@ -38,39 +42,67 @@
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">RG</label><br>
-        <input type="number" class="form-control" name="rg" placeholder="XX-XXX-XXX-X">
+        <input type="text" maxlength="9" class="form-control" name="rg">
       </div>
       <div class="col-md-6">
-        <label  for="inputPassword4"  class="form-label">CEP</label><br>
-        <input name="cep" type="text" id="cep" class="form-control" onblur="pesquisacep(this.value);" placeholder="XXXXX-XXX">
+        <label for="inputEmail4" class="form-label">ESTADO CIVIL</label><br>
+        <input type="text" class="form-control" name="estadoCivil" >
       </div>
       <div class="col-md-6">
-        <label  for="inputEmail4" class="form-label">RUA</label><br>
-        <input name="rua" type="text"  id="rua" class="form-control" placeholder="Ex: Rua João André Quíntale">
+        <label for="inputEmail4" class="form-label">CÔNJUGE</label><br>
+        <input type="text" class="form-control" name="nm_conjuge" >
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Nº</label><br>
-        <input type="number" class="form-control" name="numero" placeholder="Ex: 476">
+        <label for="inputEmail4" class="form-label">CPF CONJUGÊ</label><br>
+        <input type="text" class="form-control" name="cpf_conjuge" onblur="TestaCPF(this.value);">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">BAIRRO</label><br>
-        <input name="bairro" type="text" class="form-control" id="bairro"  placeholder="Ex: Maracanã">
+        <label for="inputEmail4" class="form-label">GRAU INSTRUÇÃO</label><br>
+        <input type="text" class="form-control" name="grauInstrucao" >
       </div>
       <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">CIDADE</label><br>
-        <input name="cidade" type="text"  id="cidade" class="form-control" placeholder="Praia Grande">
+        <label for="inputEmail4" class="form-label">FORMAÇAO</label><br>
+        <input type="text" class="form-control" name="formacao">
       </div>
       <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">ESTADO</label><br>
-        <input name="uf" type="text" id="uf" class="form-control" placeholder="São Paulo">
+        <label for="inputEmail4" class="form-label">PAI</label><br>
+        <input type="text" class="form-control" name="nm_pai">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">MAE</label><br>
+        <input type="text" class="form-control" name="nm_mae">
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">CELULAR</label><br>
-        <input type="text" name="celular" id="telefone" class="form-control" onblur="mascaracelular(this.value); "placeholder="Ex.: (11) 91234-1234">
+        <input type="text" maxlength="15" name="telefone" id="telefone" class="form-control" onblur="mascaracelular(this.value); ">
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">ID do funcionario</label><br>
         <input type="number" class="form-control" name="funcionario">
+      </div>
+      <div class="col-md-6">
+        <label  for="inputPassword4"  class="form-label">CEP</label><br>
+        <input name="cep" type="text" id="cep" class="form-control" onblur="pesquisacep(this.value);">
+      </div>
+      <div class="col-md-6">
+        <label  for="inputEmail4" class="form-label">RUA</label><br>
+        <input name="rua" type="text"  id="rua" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Nº</label><br>
+        <input type="number" class="form-control" name="numero">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">BAIRRO</label><br>
+        <input name="bairro" type="text" class="form-control" id="bairro">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CIDADE</label><br>
+        <input name="cidade" type="text"  id="cidade" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">ESTADO</label><br>
+        <input name="uf" type="text" id="uf" class="form-control">
       </div>
       <div class="col-md-12">
       <input class="btn btn-sucess" type="submit" value="Enviar">
@@ -84,14 +116,19 @@
 
   </div>
 </div>
-
+<script type="text/javascript" src="../js/viacep.js"></script>
+<script type="text/javascript" src="../js/validaCPF.js"></script>
+<script type="text/javascript" src="../js/mascaracelular.js"></script>
+<script type="text/javascript" src="../js/mascaracpf.js"></script>
   </body>
 </html>
 <?php
 if(!empty($_POST))
 {
-  $cliente = array($_POST['nome'], $_POST['cpf'], $_POST['rg'], $_POST['cep'], $_POST['rua'], $_POST['numero'], 
-                   $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['celular'], $_POST['funcionario'] );
+  $cliente = array($_POST['nome'], $_POST['genero'], $_POST['cpf'], $_POST['rg'], $_POST['estadoCivil'], $_POST['nm_conjuge'], 
+                   $_POST['cpf_conjuge'], $_POST['grauInstrucao'], $_POST['formacao'], $_POST['nm_pai'],
+                   $_POST['nm_mae'], $_POST['telefone'], $_POST['funcionario'],
+                   $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['funcionario'] );
 
   $conteudo = "Cliente: ";
   
@@ -101,7 +138,7 @@ if(!empty($_POST))
     $conteudo .= $cliente[$i].", ";
     
   }
-  $caminho = "cliente.txt";
+  $caminho = "funcionario.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){
       echo"<script> alert('Dados cadastrado com sucesso');</script>";
