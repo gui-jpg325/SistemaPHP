@@ -27,7 +27,7 @@
     </div>
 
     <!-- Login Form -->
-    <form class="row g-3" action="#" method="POST">
+    <form class="row g-3" action="#" method="POST" enctype="multipart/form-data">
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">NOME</label><br>
         <input type="text" class="form-control" name="nome">
@@ -104,6 +104,10 @@
         <label for="inputEmail4" class="form-label">ESTADO</label><br>
         <input name="uf" type="text" id="uf" class="form-control">
       </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Foto Do Funcionario</label><br>
+        <input type="file" class="form-control" name="imgCliente" accept="image/png,image/jpeg">
+      </div>
       <div class="col-md-12">
       <input class="btn btn-sucess" type="submit" value="Enviar">
       <input class="btn btn-danger" type="reset" value="Limpar">
@@ -129,6 +133,15 @@ if(!empty($_POST))
                    $_POST['cpf_conjuge'], $_POST['grauInstrucao'], $_POST['formacao'], $_POST['nm_pai'],
                    $_POST['nm_mae'], $_POST['telefone'], $_POST['funcionario'],
                    $_POST['bairro'], $_POST['cidade'], $_POST['uf'], $_POST['funcionario'] );
+
+  $imagem = $_FILES['imgCliente'];
+  $dir = "../img/Funcionario/";
+ 
+ date_default_timezone_set('America/Sao_Paulo');
+ $extensao = strtolower(substr($imagem['name'],-4));
+
+ $novo_nome= $_POST['nome']. " " .date("d-m") . $extensao;
+ move_uploaded_file($imagem['tmp_name'], $dir.$novo_nome);
 
   $conteudo = "Funcionario: ";
   

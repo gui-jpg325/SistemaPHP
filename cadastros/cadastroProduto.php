@@ -27,7 +27,7 @@
     </div>
 
     <!-- Login Form -->
-    <form class="row g-3" action="#" method="POST">
+    <form class="row g-3" action="#" method="POST" enctype="multipart/form-data">
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">LINHA DO PRODUTO</label><br>
         <input type="text" class="form-control" name="linha" >
@@ -88,6 +88,10 @@
         <label for="inputEmail4" class="form-label">COR</label><br>
         <input type="text" class="form-control" name="cor">
       </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Foto Do Produto</label><br>
+        <input type="file" class="form-control" name="imgCliente" accept="image/png,image/jpeg">
+      </div>
       <div class="col-md-12">
       <input class="btn btn-sucess" type="submit" value="Enviar">
       <input class="btn btn-danger" type="reset" value="Limpar">
@@ -114,6 +118,14 @@ if(!empty($_POST))
                    $_POST['cst_total'], $_POST['tamanho'], $_POST['cor'] );
                   
                    
+$imagem = $_FILES['imgCliente'];
+  $dir = "../img/Produto/";
+ 
+ date_default_timezone_set('America/Sao_Paulo');
+ $extensao = strtolower(substr($imagem['name'],-4));
+
+ $novo_nome= $_POST['nome']. " " .date("d-m") . $extensao;
+ move_uploaded_file($imagem['tmp_name'], $dir.$novo_nome);
 
   $conteudo = "Produto: ";
   

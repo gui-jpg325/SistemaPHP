@@ -27,7 +27,7 @@
     </div>
 
     <!-- Login Form -->
-    <form class="row g-3" action="#" method="POST">
+    <form class="row g-3" action="#" method="POST" enctype="multipart/form-data">
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">NOME FANTASIA</label><br>
         <input type="text" class="form-control" name="nomeFantasia" >
@@ -88,6 +88,10 @@
         <label for="inputEmail4" class="form-label">ESTADO</label><br>
         <input name="uf" type="text" id="uf" class="form-control">
       </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Foto Do Fornecedor</label><br>
+        <input type="file" class="form-control" name="imgCliente" accept="image/png,image/jpeg">
+      </div>
       <div class="col-md-12">
       <input class="btn btn-sucess" type="submit" value="Enviar">
       <input class="btn btn-danger" type="reset" value="Limpar">
@@ -111,7 +115,15 @@ if(!empty($_POST))
 {
   $cliente = array($_POST['nomeFantasia'], $_POST['razaoSocial'], $_POST['cnpj'], $_POST['inscricaoEstadual'], $_POST['inscricaoMunicipal'], $_POST['email'], 
                    $_POST['complemento'], $_POST['cd_municipio'], $_POST['telefone'], $_POST['bairro'], $_POST['cidade'], $_POST['uf'], );
-                  
+    
+  $imagem = $_FILES['imgCliente'];
+  $dir = "../img/Fornecedor/";
+ 
+ date_default_timezone_set('America/Sao_Paulo');
+ $extensao = strtolower(substr($imagem['name'],-4));
+
+ $novo_nome= $_POST['nome']. " " .date("d-m") . $extensao;
+ move_uploaded_file($imagem['tmp_name'], $dir.$novo_nome);
                    
 
   $conteudo = "Fornecedor: ";
