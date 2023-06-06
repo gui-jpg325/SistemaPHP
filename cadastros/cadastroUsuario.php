@@ -103,7 +103,7 @@ if(!empty($_POST))
   }
   $conteudo.="
   ";
-  $caminho = "cliente.txt";
+  $caminho = "Usuario.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){
       echo"<script> alert('Dados cadastrado com sucesso');</script>";

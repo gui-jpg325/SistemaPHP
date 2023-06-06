@@ -125,7 +125,7 @@ if(!empty($_POST))
   }
   $conteudo.="
   ";
-  $caminho = "produto.txt";
+  $caminho = "Produto.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){
       echo"<script> alert('Dados cadastrado com sucesso');</script>";
