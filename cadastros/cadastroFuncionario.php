@@ -138,6 +138,8 @@ if(!empty($_POST))
     $conteudo .= $cliente[$i].", ";
     
   }
+  $conteudo.="
+  ";
   $caminho = "funcionario.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){

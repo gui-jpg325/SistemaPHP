@@ -122,6 +122,8 @@ if(!empty($_POST))
     $conteudo .= $cliente[$i].", ";
     
   }
+  $conteudo.="
+  ";
   $caminho = "fornecedor.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){

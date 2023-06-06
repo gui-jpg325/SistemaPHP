@@ -11,17 +11,21 @@
   </head>
   <style>
     .carrosel{
-      margin-top: 30px;
-      margin-left: 5%;
-      margin-right: 75%;
+      margin-top: 120px;
+      margin-left: 28%;
+      margin-right: 33%;
+    }
+    a{
+      font-style:italic;
+      font-size: 20px;
     }
   </style>
-  <body class="p-0 m-2 border-0 bd-example">
+  <body class="p-0 m-0 border-0 bd-example bg-dark">
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-secondary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-        <img src="https://i.pinimg.com/originals/63/85/df/6385dfe03f99ea9251b35ef83758ae3e.png" alt="User Icon" style="width:60px; padding-left:10px" />
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png" alt="User Icon" style="width:50px; padding-left:10px; border-radius: 10px;" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -47,9 +51,9 @@
               <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="consultaCliente.php">Cliente</a></li>
                 <li><a class="dropdown-item" href="consultaFuncionario.php">Funcionário</a></li>
-                <li><a class="dropdown-item" href="consultaFornecedor">Fornecedor</a></li>
-                <li><a class="dropdown-item" href="consultaProduto">Produto</a></li>
-                <li><a class="dropdown-item" href="consultaUsuario">Usuário</a></li>
+                <li><a class="dropdown-item" href="consultaFornecedor.php">Fornecedor</a></li>
+                <li><a class="dropdown-item" href="consultaProduto.php">Produto</a></li>
+                <li><a class="dropdown-item" href="consultaUsuario.php">Usuário</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -73,19 +77,19 @@
 
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img src="img/piano.gif" alt="Los Angeles" class="d-block" style="width:100%">
+    <img src="https://sm.ign.com/ign_br/game/c/cuphead/cuphead_rb5p.jpg" alt="Los Angeles" class="d-block" style="width:100%">
     <div class="carousel-caption">
       
     </div>
   </div>
   <div class="carousel-item">
-    <img src="img/porsche1.gif" alt="Chicago" class="d-block" style="width:100%">
+    <img src="https://cdn.jogos360.com.br/cu/ph/cuphead-online-boss-fight-d.jpg" alt="Chicago" class="d-block" style="width:100%">
     <div class="carousel-caption">
  
     </div> 
   </div>
   <div class="carousel-item">
-    <img src="img/porsche2.gif" alt="New York" class="d-block" style="width:100%">
+    <img src="https://e7.pngegg.com/pngimages/148/433/png-clipart-cuphead-bendy-and-the-ink-machine-video-games-run-and-gun-boss-thumbnail.png" alt="New York" class="d-block" style="width:100%">
     <div class="carousel-caption">
       
     </div>  

@@ -123,6 +123,8 @@ if(!empty($_POST))
     $conteudo .= $cliente[$i].", ";
     
   }
+  $conteudo.="
+  ";
   $caminho = "produto.txt";
 
     if(file_put_contents($caminho,$conteudo,FILE_APPEND)){
